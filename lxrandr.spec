@@ -45,4 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %{_bindir}/%name
+%{_mandir}/man1/*.1.*
 %{_datadir}/applications/*.desktop
