@@ -5,7 +5,6 @@ Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
-Source1:	lxrandr.pot
 Patch0:		10_save_configuration.patch
 Patch1:		11_gseal_migration.patch
 Patch2:		20_lang_lxrandr.patch
