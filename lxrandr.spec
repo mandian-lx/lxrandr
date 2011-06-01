@@ -23,10 +23,9 @@ quick options to get your projector working correctly.
 %build
 %if git
 ./autogen.sh
-%configure2_5x --enable-man
-%else
-%configure2_5x
 %endif
+
+%configure2_5x
 %make
 
 %install
