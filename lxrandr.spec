@@ -2,7 +2,7 @@
 Summary:	Simple monitor config tool for LXDE
 Name:     	lxrandr
 Version:	0.1.1
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
