@@ -8,7 +8,7 @@ Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel intltool
 Requires:	xrandr
 
 %description
