@@ -1,8 +1,8 @@
-%define git 1
+%define git 0
 Summary:	Simple monitor config tool for LXDE
 Name:     	lxrandr
-Version:	0.1.1
-Release:	%mkrel 6
+Version:	0.1.2
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
