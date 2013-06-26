@@ -1,13 +1,15 @@
 %define git 0
+
 Summary:	Simple monitor config tool for LXDE
 Name:     	lxrandr
 Version:	0.1.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
-URL:		http://lxde.sourceforge.net/
-BuildRequires:	pkgconfig(gtk+-x11-2.0) intltool
+Url:		http://lxde.sourceforge.net/
+Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
+BuildRequires:	intltool
+BuildRequires:	pkgconfig(gtk+-x11-2.0)
 Requires:	xrandr
 
 %description
@@ -24,13 +26,12 @@ quick options to get your projector working correctly.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-%{find_lang} %{name}
+%find_lang %{name}
 
 %files -f %{name}.lang
-%defattr(-, root, root)
-%{_bindir}/%name
-%{_mandir}/man1/*.1*
+%{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
+%{_mandir}/man1/*.1*
+
