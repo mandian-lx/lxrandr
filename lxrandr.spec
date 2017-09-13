@@ -1,37 +1,52 @@
-%define git 0
-
 Summary:	Simple monitor config tool for LXDE
 Name:     	lxrandr
-Version:	0.1.2
-Release:	7
+Version:	0.3.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://lxde.sourceforge.net/
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
+Url:		https://wiki.lxde.org/en/LXRandR
+Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-x11-2.0)
+
 Requires:	xrandr
 
 %description
-This is a very basic monitor config tool utilizing XRandR. It can let you
-change the screen resolution on the fly. Besides, when you run lxrandr
-with external monitor connected, its GUI will change, and show you some 
-quick options to get your projector working correctly.
+Lightweight X11 Desktop Environment project (a.k.a LXDE) aimed to provide a
+new desktop environment which is useful enough and keep resource usage lower
+at the same time. Useabiliy, speed, and memory usage are our main concern.
+
+Unlike other tightly integrated desktops LXDE strives to be modular, so each
+component can be used independently with few dependencies. This makes
+porting LXDE to different distributions and platforms easier.
+
+LXRandR is the standard screen manager of LXDE. It manages screen resolution
+and external monitors. You can plug in another screen into LXDE or choose to
+use a big screen projector. Local screen and external screen can be used at
+the same time. LXRandR configures the screen solution automatically. 
+
+%files -f %{name}.lang
+%{_bindir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_mandir}/man1/%{name}.1*
+
+#---------------------------------------------------------------------------
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
 %makeinstall_std
 
+# locales
 %find_lang %{name}
 
-%files -f %{name}.lang
-%{_bindir}/%{name}
-%{_datadir}/applications/*.desktop
-%{_mandir}/man1/*.1*
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
